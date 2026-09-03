@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commands — TermCoder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ededed; }
+        code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-black text-neutral-200 antialiased selection:bg-neutral-800 selection:text-white flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="Logo.jpeg" alt="TermCoder Logo" class="w-8 h-8 rounded border border-neutral-800 object-cover">
+                <span class="font-bold text-base tracking-widest font-mono text-white">termcoder</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-neutral-400">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="docs.html" class="hover:text-white transition-colors">Docs</a>
+                <a href="commands.html" class="text-white">Commands</a>
+                <a href="architecture.html" class="hover:text-white transition-colors">Architecture</a>
+            </nav>
+            <div>
+                <a href="https://github.com/dlopeddtorred/termcoder" target="_blank" class="inline-flex items-center px-4 py-2 rounded-md bg-white hover:bg-neutral-200 text-black font-medium text-xs transition-colors">
+                    Download
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 flex-grow space-y-12">
+        <div class="space-y-3">
+            <h1 class="text-3xl font-bold font-mono text-white">Command Reference</h1>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+                Full list of interactive terminal commands available inside TermCoder sessions.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-lg border border-neutral-900 bg-neutral-950">
+            <table class="w-full text-left text-xs font-mono">
+                <thead class="border-b border-neutral-900 text-neutral-500 uppercase bg-neutral-900/40">
+                    <tr>
+                        <th class="p-4">Command</th>
+                        <th class="p-4">Description</th>
+                        <th class="p-4">Example</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-900 text-neutral-300">
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/mode &lt;build|chat&gt;</td>
+                        <td class="p-4 text-neutral-400">Switch between workspace-aware and general chat modes.</td>
+                        <td class="p-4 text-neutral-500">/mode chat</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/model &lt;model_name&gt;</td>
+                        <td class="p-4 text-neutral-400">Change the active local model on the fly.</td>
+                        <td class="p-4 text-neutral-500">/model qwen2.5-coder:7b</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/host &lt;url&gt;</td>
+                        <td class="p-4 text-neutral-400">Change the Ollama backend host URL.</td>
+                        <td class="p-4 text-neutral-500">/host http://localhost:11434</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/system &lt;prompt&gt;</td>
+                        <td class="p-4 text-neutral-400">Update the active system prompt instantly.</td>
+                        <td class="p-4 text-neutral-500">/system You are a senior DevOps engineer</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/run &lt;command&gt;</td>
+                        <td class="p-4 text-neutral-400">Execute a local shell command with confirmation.</td>
+                        <td class="p-4 text-neutral-500">/run pytest</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/git</td>
+                        <td class="p-4 text-neutral-400">Check current git workspace status.</td>
+                        <td class="p-4 text-neutral-500">/git</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/config</td>
+                        <td class="p-4 text-neutral-400">View current configuration file settings.</td>
+                        <td class="p-4 text-neutral-500">/config</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/clear-mem</td>
+                        <td class="p-4 text-neutral-400">Wipe persistent memory for the current mode.</td>
+                        <td class="p-4 text-neutral-500">/clear-mem</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/save</td>
+                        <td class="p-4 text-neutral-400">Export full multi-mode memory to a timestamped JSON file.</td>
+                        <td class="p-4 text-neutral-500">/save</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">/clear</td>
+                        <td class="p-4 text-neutral-400">Clear terminal screen and redraw header banner.</td>
+                        <td class="p-4 text-neutral-500">/clear</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-white font-semibold">exit / quit</td>
+                        <td class="p-4 text-neutral-400">Close the session gracefully.</td>
+                        <td class="p-4 text-neutral-500">exit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="mt-auto border-t border-neutral-900 py-8 text-center text-xs font-mono text-neutral-600">
+        <p>Distributed under the MIT License. Built for local developer workflows.</p>
+    </footer>
+</body>
+</html>
